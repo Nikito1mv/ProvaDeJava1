@@ -10,4 +10,25 @@ package Questao1;
  */
 public class Agenda {
     
+    private Pessoa[] agenda;
+    
+    public Agenda() {
+        agenda = new Pessoa[10];
+    }
+     
+    public void armazenaPessoa(String nome, int idade, double altura) {
+        Pessoa x = new Pessoa(nome, idade, altura);
+        boolean cheio = true;
+        for(int i = 0; i < agenda.length; i++) {
+            if(agenda[i] == null) {
+               agenda[i] = x;
+               cheio = false;
+               break;
+            }
+        }
+        if (cheio) {
+            System.out.println("Agenda cheia");
+        }
+    }
+    
 }
