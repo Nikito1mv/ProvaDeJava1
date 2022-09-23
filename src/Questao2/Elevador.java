@@ -22,10 +22,45 @@ public class Elevador {
         this.numeroPessoas = 0;
     }
     
-    public void Entrar() {
+    public void entrar() {
         boolean cheio = true;
         for (int i = 0; i < capacidadePessoas.length; i++){
-            
+            if (capacidadePessoas[i] == 0) {
+                capacidadePessoas[i] = 1;
+                cheio = false;
+                break;
+            }
+        }
+        if (cheio) {
+            System.out.println("Elevador Cheio");
+        }
+    }
+    
+    public void sair() {
+        boolean vazio = true;
+        for (int i = 0; i < capacidadePessoas.length; i++) {
+            if (capacidadePessoas[i] == 1) {
+                capacidadePessoas[i] = 0;
+                vazio = false;
+                break;
+            }
+        }
+        if (vazio) {
+            System.out.println("O elevador esta vazio");
+        }
+    }
+    
+    public void subir() {
+        if (andarAtual < totalAndares.length) {
+            andarAtual += 1;
+        } else {
+            System.out.println("Vocé já está no ultimo andar");
+        }
+    }
+    
+    public void descer() {
+        if (andarAtual > 0) {
+            andarAtual -= 1;
         }
     }
     
