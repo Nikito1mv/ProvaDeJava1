@@ -19,6 +19,32 @@ public class Main {
         el.entrar();
         el.entrar();
         el.subir();
+        el.subir();
+        el.subir();
+        el.subir();
+        el.subir();
+        el.subir();
+        el.subir();
+        el.subir();
+        el.subir();
+        el.subir();
+        el.subir();
         el.descer();
+        el.descer();
+        el.descer();
+        el.descer();
+        el.descer();
+        el.descer();
+        el.descer();
+        el.descer();
+        el.descer();
+        el.descer();
+        el.descer();
+        el.sair();
+        el.sair();
+        el.sair();
+        el.sair();
+        el.sair();
+        el.sair();
     }
 }

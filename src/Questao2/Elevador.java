@@ -55,16 +55,19 @@ public class Elevador {
     public void subir() {
         if (andarAtual < totalAndares.length) {
             andarAtual += 1;
-            System.out.println("O elevador subiu para o " + andarAtual + "° andar");
+            System.out.println("O elevador subiu para o " + andarAtual + " andar");
         } else {
             System.out.println("Vocé já está na cobertura");
         }
     }
     
     public void descer() {
-        if (andarAtual > 0) {
+        if (andarAtual > 1) {
             andarAtual -= 1;
-            System.out.println("O elevador desceu para o " + andarAtual + "° andar");
+            System.out.println("O elevador desceu para o " + andarAtual + " andar");
+        } else if (andarAtual == 1) {
+            andarAtual -= 1;
+            System.out.println("O elevador desceu para o térreo");
         } else {
             System.out.println("Você já está no térreo");
         }
