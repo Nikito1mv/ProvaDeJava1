@@ -11,8 +11,7 @@ package Questao4;
 public class BombaCombustivel {
     private int id;
     private String tipoDeCombustivel;
-    private double valorDoLitro;
-    private double quantidadeDoCombustivel;
+    private double valorDoLitro, quantidadeDoCombustivel;
     
     BombaCombustivel(int id, String tipoDeCombustivel, double valorDoLitro, double quantidadeDoCombustivel){
         this.id = id;
@@ -21,22 +20,26 @@ public class BombaCombustivel {
         this.quantidadeDoCombustivel = quantidadeDoCombustivel;
     }
     
-    public void abastecerPorValor(double valor) {
+    public double abastecerPorValor(double valor) {
         double litros = valor / valorDoLitro;
-        quantidadeDoCombustivel -= litros;
-        System.out.println("Você abasteceu " + litros + " litros");
+        if (litros <= quantidadeDoCombustivel) {
+            quantidadeDoCombustivel -= litros;
+        } else {
+            System.out.println("Quantidade indisponivel");
+        }
+        return litros;
     }
     
-    public void abastecerPorLitro(double litros) {
+    public double abastecerPorLitro(double litros) {
         double valor = litros * valorDoLitro;
-        quantidadeDoCombustivel -= litros;
-        System.out.println("Total a pagar é " + valor + " reais");
+        if (litros <= quantidadeDoCombustivel) {
+            quantidadeDoCombustivel -= litros;
+        } else {
+            System.out.println("Quantidade indisponivel");
+        }
+        return valor;
     }
     
-    public void abastecerBomba(int litros) {
-        quantidadeDoCombustivel += litros;
-    }
-
     public int getId() {
         return id;
     }
