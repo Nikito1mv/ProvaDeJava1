@@ -32,6 +32,10 @@ public class BombaCombustivel {
         quantidadeDoCombustivel -= litros;
         System.out.println("Total a pagar é " + valor + " reais");
     }
+    
+    public void abastecerBomba(int litros) {
+        quantidadeDoCombustivel += litros;
+    }
 
     public int getId() {
         return id;
